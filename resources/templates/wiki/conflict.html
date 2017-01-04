@@ -1,0 +1,23 @@
+{% extends "wiki/_wrapper.html" %}
+
+{% block main %}
+<h1 class="conflict">Conflict</h1>
+<p>The article has changed since you started editing. The editor
+  contains the newest version of the article. Your text and the
+  changes are at the bottom of the page. Add your changes to the editor and save again to
+  keep your changes.
+<h1>{{article.article/title}}</h1>
+<p>Based on revision: {{article.article/rev}}</p>
+{% with action=article.wiki/links.article/show
+        rev=article.article/rev
+        text=article.article/body
+        comment=comment %}
+  {% include "wiki/_editor.html" %}
+{% endwith %}
+<h3>Diff</h3>
+{% include "wiki/_diff.html" %}
+
+<h3>Your text:</h3>
+<textarea rows=20 style="width: 100%">{{next-text}}</textarea>
+
+{% endblock %}

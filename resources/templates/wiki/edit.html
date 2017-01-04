@@ -1,0 +1,16 @@
+{% extends "wiki/_wrapper.html" %}
+
+{% block main %}
+<ul>
+  <li><a href={{article.wiki/links.article/show}}>Read</a></li>
+  <li>Edit</li>
+  <li><a href={{article.wiki/links.article/history}}>History</a></li>
+</ul>
+<h1>{{article.article/title}}</h1>
+<p>Based on revision: {{article.article/rev}}</p>
+{% with action=article.wiki/links.article/show
+        rev=article.article/rev
+        text=article.article/body %}
+  {% include "wiki/_editor.html" %}
+{% endwith %}
+{% endblock %}

@@ -1,0 +1,12 @@
+{% extends "wiki/_wrapper.html" %}
+
+{% block main %}
+<ul>
+  <li>Read</li>
+  <li><a href={{article.wiki/links.article/edit}}>Edit</a></li>
+  <li><a href={{article.wiki/links.article/history}}>History</a></li>
+</ul>
+
+<h1>{{article.article/title}}</h1>
+<div class="md-body">{{article.article/md-body|safe}}</div>
+{% endblock %}

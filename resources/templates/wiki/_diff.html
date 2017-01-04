@@ -1,0 +1,9 @@
+<table class="diff">
+  <tr><th></th><th>This version</th><th>Previous version</th></tr>
+  {% for r in diff-trs %}
+  <tr class="show" onclick="if (this.className == 'show'){
+  this.className='hide'; } else { this.className =
+  'show';}"><td title="collapse">></td><td>{{r.left|safe}}</td><td>{{r.right|safe}}</td></tr>
+  {% endfor %}
+</table>
+

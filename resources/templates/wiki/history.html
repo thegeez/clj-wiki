@@ -1,0 +1,22 @@
+{% extends "wiki/_wrapper.html" %}
+
+{% block main %}
+<ul>
+  <li><a href={{article.wiki/links.article/show}}>Read</a></li>
+  <li><a href={{article.wiki/links.article/edit}}>Edit</a></li>
+  <li>History</li>
+</ul>
+
+<h1>{{article.article/title}}</h1>
+<h2>History</h2>
+<table>
+  <tr><th>Revision</th><th>Time</th><th>Comment</th></tr>
+  {% for h in history %}
+  <tr>
+    <td><a href={{h.link}} title={{h.rev}}>{{forloop.revcounter0}}</a></td>
+    <td><a href={{h.link}} title={{h.rev}}>{{h.tx-instant}}</a></td>
+    <td><a href={{h.link}} title={{h.rev}}>{{h.comment}}</a></td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}

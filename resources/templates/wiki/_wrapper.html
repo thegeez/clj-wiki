@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>WIKI {{title}}</title>
+    <link rel="stylesheet" href="/wiki.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+    
+  </head>
+
+  <body>
+    <p><a href="{{ index }}" class="logo-link">clj-wiki</a> | Create a new article:
+    wiki/<input type="text" placeholder="Article title here"
+    onkeydown="createArticle(this, event)"/></p>
+    <hr/>
+    {% block body %}
+    <main>
+    {% block main %}
+    {% endblock %}
+
+
+    </main>
+
+    {% endblock %}
+
+    <footer>
+      <hr/>
+      <p>clj-wiki by <a href="http://thegeez.net">thegeez.net</a> -
+      <a href="https://twitter.com/thegeez">@thegeez</a></p>
+    </footer>
+    <script type="text/javascript">
+      function createArticle(el, event){
+      if (event.keyCode == 13){ // enter
+        window.location = window.location.origin + "/wiki/" +
+      el.value.replace(/ /g,"_").replace(/[^\w-]/g,"");
+      }
+        return true;
+      }
+    </script>
+  </body>
+</html>

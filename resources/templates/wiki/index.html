@@ -1,0 +1,12 @@
+{% extends "wiki/_wrapper.html" %}
+
+{% block main %}
+
+<h1>Welcome to clj-wiki</h1>
+<p>Create a new article or read or edit one of the existing articles:</p>
+<ul>
+  {% for a in articles %}
+  <li><a href={{a.wiki/links.article/show}}>{{ a.article/title }}</a></li>
+  {% endfor %}
+</ul>
+{% endblock %}

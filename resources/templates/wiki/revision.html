@@ -1,0 +1,39 @@
+{% extends "wiki/_wrapper.html" %}
+
+{% block main %}
+<ul>
+  <li><a href={{article.wiki/links.article/show}}>Read</a></li>
+  <li><a href={{article.wiki/links.article/edit}}>Edit</a></li>
+  <li><a href={{article.wiki/links.article/history}}>History</a></li>
+</ul>
+
+<h1>{{article.article/title}}</h1>
+<p>Article at revision: {{article.article/rev}}</p>
+<p>Comment for this edit: {{comment}}</p>
+<ul class="rev-nav">
+{% if nav.prev %}
+  <li class="rev-prev"><a href={{nav.prev}}>< Previous Version</a></li>
+{% endif %}
+{% if nav.nrev %}
+  <li class="rev-next"><a href={{nav.nrev}}>Next Version ></a></li>
+{% endif %}
+</ul>
+<div style="clear:both;"></div>
+<div class="md-body">{{rev-body|safe}}</div>
+<h3>Diff</h3>
+{% if diff-trs %}
+  {% include "wiki/_diff.html" %}
+{% else %}
+<p>This is the original version of this article, therefore there is no diff shown</p>
+{% endif %}
+
+<ul class="rev-nav">
+{% if nav.prev %}
+  <li class="rev-prev"><a href={{nav.prev}}>< Previous Version</a></li>
+{% endif %}
+{% if nav.nrev %}
+  <li class="rev-next"><a href={{nav.nrev}}>Next Version ></a></li>
+{% endif %}
+</ul>
+<div style="clear:both;"></div>
+{% endblock %}

@@ -1,0 +1,28 @@
+<form id="wiki-form" method="POST" action={{action}}>
+  {% if rev %}
+    <input type="hidden" name="rev" value={{rev}}>
+  {% endif %}
+  Comment: <input type="text" id="comment" name="comment"
+                  placeholder="A comment for your edit to save in the history" size=80
+                  {% if comment %}value="{{comment}}"{% endif %}>
+  <div class="editor-help">Editor tips: <i class="fa fa-eye"></i> is
+  preview, <i class="fa fa-columns"></i> is side-by-side editor with
+  live preview, <i class="fa fa-arrows-alt"></i> is fullscreen,
+  <i class="fa fa-save"></i> is save. Links to other articles are
+  [Article Name](/wiki/Article_Name).</div>
+  <textarea id="md-editor" name="text" rows=40 style="width: 100%">{{text}}</textarea>
+  <input type="submit" class="submit" value="Save">
+</form>
+<script type="text/javascript">
+  var simplemde = new SimpleMDE({ element: document.getElementById("md-editor"),
+                                  toolbar: ["bold","italic","heading","|","quote","code","unordered-list","ordered-list","|","link","image","|","preview","side-by-side","fullscreen","|","guide","|",
+                    {
+                     name: "save",
+                     action: function customFunction(editor){
+                               document.getElementById("wiki-form").submit()
+                             },
+                      className: "fa fa-save",
+                      title: "Save",
+       }]
+ });
+</script>

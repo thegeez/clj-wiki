@@ -1,0 +1,57 @@
+body {
+    font-family: sans-serif;
+}
+hr {
+ background-color: #05a;
+ height: 3px;
+ border: 0px;
+}
+a.logo-link {
+    color: #000;
+    font-weight: bold;
+}
+ul.rev-nav {
+    list-style: none;
+    padding-left: 0px;
+}
+li.rev-prev {
+    float: left;
+}
+li.rev-next {
+    float: right;
+}
+
+ins {
+    background: #249824;
+}
+
+del {
+    background: #ff0e0e;
+}
+.editor-help {
+    border: 1px solid grey;
+    background-color: #ccc;
+    padding: 4px;
+}
+div.editor-help i {
+    color: #2c3e50;
+}
+table.diff {
+    border: 1px solid grey;
+    width: 100%;
+}
+table.diff td {
+    border: 1px solid black;
+}
+table.diff tr.hide td{
+    line-height: 4px;
+    background: grey;
+    font-size: 0pt;
+}
+table.diff tr.hide td br {
+    display: none;
+}
+h1.conflict {
+    color: red;
+}
+
