@@ -2,6 +2,8 @@
 
 A wiki made with Clojure, Yada and Datomic Client.
 
+More info in this blogpost: [http://thegeez.net/2017/01/04/wiki_clojure_yada_datomic_client.html](http://thegeez.net/2017/01/04/wiki_clojure_yada_datomic_client.html)
+
 This is based on the [Edge](https://github.com/juxt/edge) example project. See that projects README for more instructions.
 
 ## Libraries
