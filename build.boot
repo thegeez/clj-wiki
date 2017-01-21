@@ -58,7 +58,6 @@
    [org.bitbucket.cowwoc/diff-match-patch "1.1"]
    [markdown-clj "0.9.91"]
    [com.datomic/clj-client "0.8.606"]
-   [com.datomic/datomic-pro "0.9.5544" :exclusions [org.slf4j/slf4j-nop]]
 
    ;; Logging
    [org.clojure/tools.logging "0.3.1"]
